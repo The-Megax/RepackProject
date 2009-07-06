@@ -1,0 +1,40 @@
+--[[ AscendScripting Script - 
+This software is provided as free and open source by the
+staff of The AscendScripting Team.This script was
+written and is protected by the GPL v2. The following
+script was released by a AscendScripting Staff Member.
+Please give credit where credit is due, if modifying,
+redistributing and/or using this software. Thank you.
+
+~~End of License Agreement
+-- AscendScripting Staff, February 26, 2009. ]]
+
+
+function SilverCovenantHorseman_OnCombat(Unit, Event)
+Unit:RegisterEvent("SilverCovenantHorseman_MultiShot", 8000, 0)
+Unit:RegisterEvent("SilverCovenantHorseman_Shoot", 6000, 0)
+end
+
+function SilverCovenantHorseman_MultiShot(pUnit, Event) 
+pUnit:FullCastSpellOnTarget(14443, pUnit:GetMainTank()) 
+end
+
+function SilverCovenantHorseman_Shoot(pUnit, Event) 
+pUnit:FullCastSpellOnTarget(6660, pUnit:GetMainTank()) 
+end
+
+function SilverCovenantHorseman_OnLeaveCombat(Unit, Event) 
+Unit:RemoveEvents() 
+end
+
+function SilverCovenantHorseman_OnDied(Unit, Event) 
+Unit:RemoveEvents()
+end
+
+function SilverCovenantHorseman_OnKilledTarget(Unit, Event) 
+end
+
+RegisterUnitEvent(30263, 1, "SilverCovenantHorseman_OnCombat")
+RegisterUnitEvent(30263, 2, "SilverCovenantHorseman_OnLeaveCombat")
+RegisterUnitEvent(30263, 3, "SilverCovenantHorseman_OnKilledTarget")
+RegisterUnitEvent(30263, 4, "SilverCovenantHorseman_OnDied")
