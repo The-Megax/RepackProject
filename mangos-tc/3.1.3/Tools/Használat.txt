@@ -1,4 +1,0 @@
-1. Másold be a World of Warcraft mappádba az ad.exe-t
-2. Indítsd el :D
-3. Másold a maps és dbc mappát a World of Warcraft mappádból a Core mappába
-4. Kész
